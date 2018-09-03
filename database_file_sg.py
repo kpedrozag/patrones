@@ -30,7 +30,7 @@ def prueba():
     primero = DB()
     query = 		"""
 		INSERT INTO libros
-		(autor, genero, precio, titulo)
+		(codigo, nombre, apellido, departamento)
 		VALUES
 		('Stephen King', 'Terror', 115,'Cementerio de animales');
 		"""

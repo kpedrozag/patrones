@@ -15,8 +15,8 @@ class Departamento:
         self.dept = None
 
     def get_values(self):
-        val = '(\'' + str(self.cod) + '\', \'' + self.nombre + '\', \'' + self.apellido + '\', \'' + self.dept + '\'' + ')'
-        return val
+        # val = '(' + str(self.cod) + ', \'' + self.nombre + '\', \'' + self.apellido + '\', \'' + self.dept + '\'' + ')'
+        return self.cod, self.nombre, self.apellido, self.dept
 
 
 class E_finanzas(Departamento):
