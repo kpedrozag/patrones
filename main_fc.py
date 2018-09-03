@@ -1,6 +1,7 @@
 from depts_ft import *
 from gen_code import generador
-# import sys
+from database_file_sg import DB
+
 
 def data_request():
     print("A continuacion ingrese los datos del empleado.")
@@ -33,7 +34,16 @@ def data_request():
 
 
 def insercion(emp):  # objeto factory
-    pass
+    enlace = DB()
+    nm = emp.get_nom()
+    ap = emp.get_apell()
+    cd = emp.get_cod()
+    dpt = emp.get_dept()
+
+    query = "INSERT INTO empleados (codigo, nombre, apellido, departamento) VALUES (" + str(cd) + ",\'" + nm + "\',\'" + ap + "\',\'" + dpt + "\');"
+
+    enlace.cur.execute(query)
+    enlace.conn.commit()
 
 
 if __name__ == '__main__':
@@ -42,4 +52,14 @@ if __name__ == '__main__':
     fc = Factory()
     while True:
         nombre, apellido, cod_dp = data_request()
-        fc.get_emp(idd=generador(cod_dp), nm=nombre, ap=apellido, dpt=cod_dp)
+        emp = fc.get_emp(idd=generador(cod_dp), nm=nombre, ap=apellido, dpt=cod_dp)
+        insercion(emp)
+        res = input("Desea añadir otro empleado?\n's' -> sí\n'n' -> no\n\nOpcion:\t")
+        if res == 's' or res == 'S':
+            pass
+        elif res == 'n' or res == 'N':
+            break
+        else:
+            print("ERROR.")
+    l = DB()
+    print(l.cur.execute('SELECT * FROM empelados').fetchall())

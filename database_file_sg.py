@@ -20,7 +20,7 @@ class DB:
 				codigo NUMERIC NOT NULL,
 				nombre TEXT NOT NULL,
 				apellido TEXT NOT NULL,
-				departamento TEXT NOT NULL,
+				departamento TEXT NOT NULL
 			);
 		"""
             DB.cur.execute(query)

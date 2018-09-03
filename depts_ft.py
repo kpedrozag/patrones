@@ -18,6 +18,18 @@ class Departamento:
         # val = '(' + str(self.cod) + ', \'' + self.nombre + '\', \'' + self.apellido + '\', \'' + self.dept + '\'' + ')'
         return self.cod, self.nombre, self.apellido, self.dept
 
+    def get_cod(self):
+        return self.cod
+
+    def get_nom(self):
+        return self.nombre
+
+    def get_apell(self):
+        return self.apellido
+
+    def get_dept(self):
+        return self.dept
+
 
 class E_finanzas(Departamento):
     def __init__(self, cd, nm, ap, dp):
