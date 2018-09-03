@@ -31,9 +31,11 @@ def data_request():
             print("ERROR. OPCION NO VALIDA.")
     return v1, v2, v3
 
-def insercion(emp):  # objeto factory
 
-    
+def insercion(emp):  # objeto factory
+    pass
+
+
 if __name__ == '__main__':
     print("SISTEMA DE INSERCION DE EMPLEADOS\n\n")
     input("Digite cualquier tecla para continuar.")
